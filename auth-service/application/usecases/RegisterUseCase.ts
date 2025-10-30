@@ -4,7 +4,7 @@ import { CreateUserInput } from "../../domain/entities/User";
 import { IUserRepository } from "../../domain/repositories/IUserRepository";
 import { IEventPublisher } from "../../domain/services/IEventPublisher";
 
-export class RegisterUserCase {
+export class RegisterUseCase {
   constructor(
     private userRepository: IUserRepository,
     private eventPublisher: IEventPublisher,

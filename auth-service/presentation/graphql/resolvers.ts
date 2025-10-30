@@ -1,8 +1,8 @@
 import { LoginUseCase } from "../../application/usecases/LoginUseCase";
-import { RegisterUserCase } from "../../application/usecases/RegisterUserCase";
+import { RegisterUseCase } from "../../application/usecases/RegisterUseCase";
 
 export const createResolvers = (
-  registerUseCase: RegisterUserCase,
+  registerUseCase: RegisterUseCase,
   loginUseCase: LoginUseCase
 ) => ({
   Query: {
