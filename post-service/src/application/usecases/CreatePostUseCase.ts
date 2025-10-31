@@ -1,4 +1,3 @@
-import { create } from "domain";
 import { CreatePostInput } from "../../domain/entities/Post";
 import { IPostRepository } from "../../domain/repositories/IPostRepository";
 import { IEventPublisher } from "../../domain/services/IEventPublisher";
