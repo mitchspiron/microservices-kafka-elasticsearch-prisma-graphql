@@ -11,7 +11,8 @@ Microservices system with 3 services:
 
 ```
 ├── auth-service/
-│   ├── ├── domain/          # Entities & interfaces
+│   ├── src/
+│   │   ├── domain/          # Entities & interfaces
 │   │   ├── application/     # Use cases
 │   │   ├── infrastructure/  # Prisma, Kafka, GraphQL
 │   │   └── presentation/    # GraphQL Resolvers

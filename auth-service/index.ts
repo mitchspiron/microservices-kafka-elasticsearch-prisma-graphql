@@ -3,12 +3,12 @@ import dotenv from "dotenv";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { PrismaClient } from "@prisma/client";
-import { PrismaUserRepository } from "./infrasctructure/database/PrismaUserRepository";
-import { KafkaEventPublisher } from "./infrasctructure/messaging/KafkaEventPublisher";
-import { RegisterUseCase } from "./application/usecases/RegisterUseCase";
-import { LoginUseCase } from "./application/usecases/LoginUseCase";
-import { createResolvers } from "./presentation/graphql/resolvers";
-import { typeDefs } from "./presentation/graphql/schema";
+import { PrismaUserRepository } from "./src/infrasctructure/database/PrismaUserRepository";
+import { KafkaEventPublisher } from "./src/infrasctructure/messaging/KafkaEventPublisher";
+import { RegisterUseCase } from "./src/application/usecases/RegisterUseCase";
+import { LoginUseCase } from "./src/application/usecases/LoginUseCase";
+import { createResolvers } from "./src/presentation/graphql/resolvers";
+import { typeDefs } from "./src/presentation/graphql/schema";
 
 dotenv.config();
 
