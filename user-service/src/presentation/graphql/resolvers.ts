@@ -14,11 +14,11 @@ export const createResolvers = (
     },
   },
   Mutation: {
-    updateProfile: async (_: any, { input }: any, context: any) => {
+    updateProfile: async (_: any, args: { input: any }, context: any) => {
       if (!context.userId) {
         throw new Error("Unauthorized");
       }
-      return await updateUserUseCase.execute(context.userId, input);
+      return await updateUserUseCase.execute(context.userId, args.input);
     },
   },
 });
