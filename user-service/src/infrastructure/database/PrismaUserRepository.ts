@@ -5,6 +5,14 @@ import { UpdateUserInput, User } from "../../domain/entities/User";
 export class PrismaUserRepository implements IUserRepository {
   constructor(private prisma: PrismaClient) {}
 
+  async create(data: {
+    id: string;
+    email: string;
+    name: string;
+  }): Promise<User> {
+    return this.prisma.user.create({ data });
+  }
+
   async findById(id: string): Promise<User | null> {
     return this.prisma.user.findUnique({ where: { id } });
   }
