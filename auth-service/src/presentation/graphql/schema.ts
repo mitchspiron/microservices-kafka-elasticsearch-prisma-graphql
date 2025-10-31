@@ -2,7 +2,7 @@ export const typeDefs = `#graphql
     type User {
         id: ID!
         email: String!
-        name: String
+        name: String!
     }
 
     type AuthPayload {
@@ -13,7 +13,7 @@ export const typeDefs = `#graphql
     input RegisterUserInput {
         email: String!
         password: String!
-        name: String
+        name: String!
     }
 
     input LoginInput {

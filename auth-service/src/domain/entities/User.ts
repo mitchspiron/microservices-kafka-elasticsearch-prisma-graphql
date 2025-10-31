@@ -2,7 +2,7 @@ export interface User {
   id: string;
   email: String;
   password: string;
-  name?: string;
+  name: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -10,7 +10,7 @@ export interface User {
 export interface CreateUserInput {
   email: string;
   password: string;
-  name?: string;
+  name: string;
 }
 
 export interface LoginInput {
