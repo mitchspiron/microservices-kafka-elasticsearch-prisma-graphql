@@ -12,7 +12,7 @@ export class CreatePostUseCase {
     const post = await this.postRepository.create(input);
 
     // Publish an event after creating the post
-    await this.eventPublisher.publish("PostCreated", {
+    await this.eventPublisher.publish("post.created", {
       id: post.id,
       title: post.title,
       content: post.content,
