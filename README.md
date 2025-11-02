@@ -44,7 +44,7 @@ Microservices system with 3 services:
 └── README.md
 ```
 
-## Démarrage rapide
+## Quick start
 
 ```bash
 # Clone and install
