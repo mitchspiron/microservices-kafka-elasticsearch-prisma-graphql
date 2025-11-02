@@ -43,6 +43,8 @@ async function main() {
   const { url } = await startStandaloneServer(server, {
     listen: { port: Number(process.env.PORT) || 4001 },
   });
+
+  console.log(`🚀 Auth Service ready at ${url}`);
 }
 
 main().catch((error) => {
