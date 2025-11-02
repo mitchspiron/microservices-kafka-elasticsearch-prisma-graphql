@@ -19,3 +19,13 @@ export interface UpdatePostInput {
     content?: string;
     published?: boolean;
 }
+
+/* export interface PostIndexMapping {
+  properties: {
+    id: { type: "keyword" };
+    title: { type: "text" };
+    content: { type: "text" };
+    authorId: { type: "keyword" };
+    createdAt: { type: "date" };
+  };
+} */
