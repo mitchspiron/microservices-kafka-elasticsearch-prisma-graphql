@@ -11,7 +11,7 @@ services:
     ports:
       - "${POSTGRES_AUTH_PORT}:5432"
     volumes:
-      - ${POSTGRES_AUTH_VOLUME}:/var/lib/postgresql/data
+      - postgres_auth_data:/var/lib/postgresql/data
 
   # PostgreSQL for User Service
   postgres-user:
@@ -23,7 +23,7 @@ services:
     ports:
       - "${POSTGRES_USER_PORT}:5432"
     volumes:
-      - ${POSTGRES_USER_VOLUME}:/var/lib/postgresql/data
+      - postgres_user_data:/var/lib/postgresql/data
 
   # PostgreSQL for Post Service
   postgres-post:
@@ -35,7 +35,7 @@ services:
     ports:
       - "${POSTGRES_POST_PORT}:5432"
     volumes:
-      - ${POSTGRES_POST_VOLUME}:/var/lib/postgresql/data
+      - postgres_post_data:/var/lib/postgresql/data
 
   # Kafka & Zookeeper
   zookeeper:
@@ -70,7 +70,7 @@ services:
     ports:
       - "9200:9200"
     volumes:
-      - ${ELASTICSEARCH_VOLUME}:/usr/share/elasticsearch/data
+      - elasticsearch_data:/usr/share/elasticsearch/data
 
   # Auth Service
   auth-service:
@@ -87,7 +87,7 @@ services:
     depends_on:
       - postgres-auth
       - kafka
-    command: sh -c "npm run migrate && npm start"
+    command: sh -c "npx prisma migrate && npm start"
 
   # User Service
   user-service:
@@ -104,7 +104,7 @@ services:
     depends_on:
       - postgres-user
       - kafka
-    command: sh -c "npm run migrate && npm start"
+    command: sh -c "npx prisma migrate && npm start"
 
   # Post Service
   post-service:
@@ -123,7 +123,7 @@ services:
       - postgres-post
       - elasticsearch
       - kafka
-    command: sh -c "npm run migrate && npm start"
+    command: sh -c "npx prisma migrate && npm start"
 
 volumes:
   postgres_auth_data:

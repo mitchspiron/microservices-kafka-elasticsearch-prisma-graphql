@@ -1,6 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import { IUserRepository } from "../../domain/repositories/IUserRepository";
 import { UpdateUserInput, User } from "../../domain/entities/User";
+import { PrismaClient } from "@prisma/client";
 
 export class PrismaUserRepository implements IUserRepository {
   constructor(private prisma: PrismaClient) {}
